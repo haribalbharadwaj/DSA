@@ -1,0 +1,67 @@
+1. What is javascript?
+   Javascript is high level, interpreted programming language primarily used for adding interactivity to web pages.
+
+2. What are datatypes in javascript?
+   String, Number,Boolean,null,undefined,and symbol. Also complex object also called as object.
+
+3. What is the difference between null and undefined?
+   Null represents intentional absence of any object value |||| Undefined indicates the absence of a value or an uninitialised variable.
+
+4. What is DOM in Javascript?
+   Document Object Model is a programming interface that represents the structure of HTML and XML documents.
+   It allows Javascript to access and manipulate the content and structure of a webpage.
+
+5. What is an event in Javascript?
+   An event is an action or occurence that happens in the browser, such as a button click or page load. 
+   Javascript can respond to these events by executing code in response.
+
+6. What is an anonymous function in Javascript?
+   A function without a name, it can be assigned to a variable or passed as an arguement to another function. They are often used for one time or callback functions.
+
+7. What are closures in Javascript?
+   Closues are functions that have access to varialbles from an outer function,even after the outer function has finished executing. 
+   They encapsulate data and provide a way to maintain state between function calls.
+
+	Example for closures
+
+	function outerFunction() {
+		var outerVariable = "Hello ";
+		function innerFunction(name){
+		console.log(outerVariable+name);
+		}
+		return innerFunction;
+	}
+	var inner = outerFunction();
+	inner("John"); //// Output : Hello John
+
+8. What is the difference between == and === in javascript?
+   The == operator checks for equality afer performing type correction.While
+   === operator checks for equality without type correction, ensuring both the value and type match.
+
+9. What is hoisting in Javascript?
+   Hoisting is a Javascript behaviuor where variable and declarations are moved to the top of their containing scope during the compilation phase, 
+   allowing them to be used before they  are declared.
+
+10. What is the this keyword in Javascript?
+    The this keyword refers to the object that is currently executing the code. 
+    Its value is determined by how a function is called and it provides a way to access object properties and methods within a function.
+
+    Example.
+
+	<script>
+	// Create an object:
+	const person = {
+  		firstName: "John",
+  		lastName: "Doe",
+  		id: 5566,
+  		fullName : function() {
+    			return this.firstName + " " + this.lastName;
+  			}
+		};
+
+	// Display data from the object:
+	document.getElementById("demo").innerHTML = person.fullName();
+	</script>
+
+
+
