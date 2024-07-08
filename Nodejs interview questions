@@ -1,0 +1,24 @@
+1. What is Node.js?
+   Node.js is a javascript engine used for executing Javascript code outside the browser.
+   It is normally used to build the backend of the application and is highly scalable.
+
+2. What is the difference between Nodejs and JavaScript?
+   
+	Node.js								JavaScript
+
+	Server-side runtime environment					Client-side scripting language
+	Allows running JavaScript code on server			Primarily used for web development
+	Built on Chrome’s V8 JavaScript engine				Runs in a web browser’s JavaScript engine	
+	Enables building scalable network applications			Executes code within a browser environment
+	Provides access to file system and network resources		Limited to browser APIs and capabilities
+	Supports event-driven, non-blocking I/O operations		Executes in a single-threaded event loop
+	Used for building backend APIs, servers, and applications	Utilized for creating interactive web pages and client-side logic
+
+3. Is Node.js single threaded?
+   Yes, Node.js is a single threaded by default.
+   However it utilizes a event-driven architecture and non blocking I/O operatios to handle multiple concurrent requests efficiently, 
+   enabling scalability and high performance in applications.
+
+4. What kind of API function is supported by Node.js?
+   Synchronous: These API functions are used for blocking code.
+   Asynchronous: These API functions are used for non-blocking code.
