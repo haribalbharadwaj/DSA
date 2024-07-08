@@ -1,0 +1,72 @@
+1. What is react?
+   React is a Javascript library used to create User interface, and it is a tool for building UI components.
+
+2. What is the difference between Real DOM and Virtual DOM?
+   Real DOM represents the actual HTML structure of a web page.
+   While Virtual DOM is a lightweight copy of the DOM used by React to enhance performance while updating the actual DOM.
+
+3. What is controlled component and uncontrlled component?
+   Controlled components are those in which form's data handled by the components state.
+   It takes its current value through props and makes changes through callback like onClick , onChange etc.
+   A parent component manages its own state and passes the new value as props to the controlled component.
+
+  Controlled Component
+
+  import {useState} from 'react';
+  
+  function App(){
+	const [name,setName] = useState('');
+	
+	function handleSubmit(){
+		alert(`Name:${name}`);
+	}
+
+	return(
+	<div>
+		<h1>Controlled Components</h1>
+		<form onSubmit={handleSubmit}>
+		<input
+		type='text'
+		name='name'
+		value={name}
+		onChange={(e)=>setName(e.target.value)}
+		/>
+		<button type="submit">Submit</button>
+		</form>
+	</div>
+	);
+}
+
+export default App;
+
+ 
+  Uncontrolled components are those that are not controlled by the React stateand are handled by the DOM. So in order to access any value that has been entered we take the help of refs.
+
+
+  import react,{use Ref} from 'react';
+  
+  function App(){
+  	const inputRef = useRef(null);
+
+  	function handleSubmit(){
+  	alert(`Name:${inputRef.current.value}`);
+	}
+	
+	return(
+	<div>
+		<h1>Uncontrolled components</h1>
+		<form onSubmit={handleSubmit}>
+		<input
+		name= 'name'
+		type='text'
+		ref={inputRef}
+		/>
+		<button type='submit'>Submit</button>
+		</form>
+	</div>
+
+	);
+  }
+
+export default App;
+
