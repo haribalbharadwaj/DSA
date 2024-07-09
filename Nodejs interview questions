@@ -22,3 +22,37 @@
 4. What kind of API function is supported by Node.js?
    Synchronous: These API functions are used for blocking code.
    Asynchronous: These API functions are used for non-blocking code.
+4. What kind of API function is supported by Node.js?
+   Synchronous: These API functions are used for blocking code.
+   Asynchronous: These API functions are used for non-blocking code.
+
+Feature				Synchronous Functions							Asynchronous Functions
+
+Execution Blocking		Blocks the execution until the task completes.				Does not block the execution; allows other tasks to proceed concurrently.
+
+Waiting for Completion		Executes tasks sequentially; 
+				each task must complete before the next one starts.		        Initiates tasks and proceeds with other operations while waiting for completion.
+
+Return Value			Returns the result immediately after completion.			Typically returns a promise, callback, or uses event handling to handle the result upon completion.
+
+Error Handling			Errors can be easily caught with try-catch blocks.			Error handling is more complex and often involves callbacks, promises, or async/await syntax.
+
+Usage Scenario			Suitable for simple, sequential tasks with predictable execution flow.	Ideal for I/O-bound operations, network requests, and tasks requiring parallel processing.
+
+5. What is a Module in Node.js?
+   In Node.js application, a module can be considered as a block of code that provide a simple or complex functionality that can communicate with external application.
+    eg : http,fs,os,path,etc.
+
+6. What is npm in node.js?
+   npm is Node Package Manager, it is the default package manager for node.js. It allows delevopers to discover,share and reuse code packages easily.
+   It advantages include dependency management, version control,centralised repository and seamless integration with node.js projects.
+
+7. What is middleware?
+   Middleware is the function that works between request and response cycle.
+   It gets executed after the server receives the request and before the controller sends the response.
+
+8. How does Node.js handle concurrency even after being single threaded?
+   Node.js handles concurrency by using asynchronous, non blocking operations.
+   Instead of waiting for one task to complete before starting the next,it can initiate multiple tasks and continue processing while waiting for them to fimish,all within a single thread.
+ 
+
