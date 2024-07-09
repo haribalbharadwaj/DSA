@@ -1,0 +1,56 @@
+Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.
+
+changeXY("codex") → "codey"
+changeXY("xxhixx") → "yyhiyy"
+changeXY("xhixhix") → "yhiyhiy"
+
+Solution
+public String changeXY(String str) {
+  if(str.length()==0){
+    return str;
+  }
+  char firstChar = str.charAt(0);
+  if(firstChar == 'x'){
+    return 'y'+ changeXY(str.substring(1));
+  }else{
+    return firstChar + changeXY(str.substring(1));
+  }
+}
+
+the time complexity of the function can be analyzed as follows:
+
+The first call makes n recursive calls.
+Each recursive call performs 𝑂(1)
+O(1) work plus the cost of the substring operation.
+Since creating the substring in each call is 𝑂(𝑛)
+O(n) and there are 𝑛 recursive calls, the overall time complexity is:𝑂(1) + O(n-1) +O(n-2)+ O(n-3)........O(1) = 𝑂(𝑛2)
+O(1)+O(n−1)+O(n−2)+…+O(1)=O(n 2)
+
+Therefore, the time complexity of the changeXY function is 𝑂(𝑛2)
+
+
+
+
+The total time complexity T(n) can be expressed as the sum of the time complexities of each call:
+
+T(n)= O(n)+O(n−1)+O(n−2)+…+O(1)
+
+This forms an arithmetic series, which sums up to:
+
+T(n)=∑ k=1 n O(k) [read as : summation of k=1 to n multiply O(k)]
+
+The sum of the first n integers is given by:
+∑𝑛 K =  n(n+1)/2
+𝑘=1
+
+Therefore:
+
+T(n)=O(n(n+1)/2)
+
+Asymptotically, the n2 term dominates, so the time complexity is:
+
+T(n)=O(n 2)
+
+This shows that the overall time complexity of the changeXY function is O(n2).
+
+
